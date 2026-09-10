@@ -178,6 +178,17 @@ section{margin-top:28px}
 }
 .light .market-note{background:#00000003;border-color:#0000000d;color:#656978}
 
+
+/* SECTION VISUALS */
+.section-visual{
+ position:absolute;top:32px;right:32px;width:330px;margin:0;overflow:hidden;border-radius:18px;
+ border:1px solid #00e5ff35;background:#050b14
+}
+.section-visual img{display:block;width:100%;height:auto;object-fit:contain;opacity:1}
+.section-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#06091488,transparent 32%)}
+.section-visual figcaption{position:absolute;z-index:1;left:22px;bottom:18px;font-size:12px;letter-spacing:2px;color:#c8efff}
+#about.section,#services.section{position:relative;padding-right:390px}
+
 /* FOOTER */
 footer{text-align:center;padding:30px 0;color:#77798b;font-size:12px}
 
@@ -198,6 +209,8 @@ footer{text-align:center;padding:30px 0;color:#77798b;font-size:12px}
  .bio{margin-left:auto;margin-right:auto}.buttons{justify-content:center}.photo-wrap{order:-1}
  .photo{width:210px}.cards,.socials,.service-cards,.live-strip,.projects{grid-template-columns:1fr}
  .stats{grid-template-columns:1fr 1fr}.section{padding:24px 18px}
+ #about.section,#services.section{padding-right:18px}
+ .section-visual{position:relative;top:auto;right:auto;width:100%;margin-top:20px}
 }
 </style>
 </head>
@@ -281,6 +294,10 @@ footer{text-align:center;padding:30px 0;color:#77798b;font-size:12px}
       </p>
     </div>
   </div>
+  <figure class="section-visual">
+    <img src="logo3.jpeg" alt="Amal Mammadaliyev proqramlaşdırma mühitində">
+    <figcaption>MY SKILLS · BUILDING EVERY DAY</figcaption>
+  </figure>
 </section>
 
 <section class="section" id="services">
@@ -323,6 +340,10 @@ footer{text-align:center;padding:30px 0;color:#77798b;font-size:12px}
       <p id="maintenanceText">Sayt yeniləmələri, kiçik dəyişikliklər və texniki dəstək üçün aylıq paketlər mümkündür.</p>
     </div>
   </div>
+  <figure class="section-visual">
+    <img src="logo2.jpeg" alt="Amal Mammadaliyev motivasiya vizualı">
+    <figcaption>DISCIPLINE BUILDS FREEDOM</figcaption>
+  </figure>
 </section>
 
 <div class="market-note" id="marketNote">
@@ -418,6 +439,7 @@ footer{text-align:center;padding:30px 0;color:#77798b;font-size:12px}
     </a>
   </div>
 </section>
+
 
 <section class="cta" id="contact">
   <h2 id="ctaTitle">Sayt istəyirsən? 🚀</h2>
