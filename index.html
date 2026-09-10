@@ -1,258 +1,627 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Amal Mammadaliyev</title>
+<meta name="description" content="Amal Mammadaliyev — web development, portfolio və şəxsi brend.">
+<meta name="keywords" content="Amal Mammadaliyev, web development, HTML, CSS, JavaScript, portfolio">
+<meta name="author" content="Amal Mammadaliyev">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<title>Amal Mammadaliyev | Web & Content</title>
 
-        body {
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at 10% 20%, #ff4ecd55, transparent 30%),
-                radial-gradient(circle at 90% 10%, #4c6fff66, transparent 30%),
-                radial-gradient(circle at 50% 100%, #00e5ff44, transparent 35%),
-                #090914;
-            color: white;
-            display: flex;
-            justify-content: center;
-            padding: 50px 20px;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:#fff;
+    background:
+      radial-gradient(circle at 10% 10%,#ff4ecd33,transparent 28%),
+      radial-gradient(circle at 90% 10%,#4c6fff44,transparent 28%),
+      radial-gradient(circle at 50% 100%,#00e5ff22,transparent 35%),#080811;
+    padding:22px 16px;overflow-x:hidden
+}
+body.light{background:#f2f3f8;color:#11131a}
+.page{max-width:1100px;margin:auto}
+a{color:inherit}
 
-        .container {
-            width: 100%;
-            max-width: 850px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 50px;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
-        }
+/* NAV */
+.navbar{
+ position:sticky;top:12px;z-index:20;display:flex;align-items:center;
+ justify-content:space-between;padding:14px 18px;margin-bottom:28px;
+ border:1px solid #ffffff18;border-radius:18px;background:#0e0f19cc;
+ backdrop-filter:blur(18px)
+}
+.logo{font-size:22px;font-weight:900;letter-spacing:-1px}
+.logo span{color:#00e5ff}
+.navlinks{display:flex;gap:22px}
+.navlinks a{color:#aaaabd;text-decoration:none;font-size:14px;transition:.25s}
+.navlinks a:hover{color:#fff}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.lang-select{height:38px;padding:0 10px;border:1px solid #ffffff18;border-radius:12px;background:#ffffff0b;color:#fff;cursor:pointer;font-size:13px;outline:none}
+.lang-select option{background:#11131b;color:#fff}
+.light .lang-select{color:#111;background:#00000005;border-color:#00000012}
+.light .lang-select option{background:#fff;color:#111}
+.theme{
+ width:38px;height:38px;border:1px solid #ffffff18;border-radius:50%;
+ background:#ffffff0b;color:#fff;cursor:pointer;font-size:17px
+}
+.language-select{
+ width:82px;height:38px;padding:0 8px;border:1px solid #ffffff25;border-radius:12px;
+ background:#171824;color:#fff;cursor:pointer;font-size:12px;font-weight:700;outline:none;
+} .language-select:hover{border-color:#00e5ff66;background:#202131}
+.language-select option{background:#171824;color:#fff}
+.light .language-select{background:#fff;color:#111;border-color:#00000018}
+.light .language-select option{background:#fff;color:#111}
+@media(max-width:820px){.language-select{width:75px}.nav-actions{gap:6px}}
 
-        .profile {
-            text-align: center;
-            padding-bottom: 35px;
-        }
 
-        .avatar img{
-            width: 20%;
-            height: 20%;
-            object-fit: cover;
-            border-radius: 39%;
-        }
+/* HERO */
+.hero{
+ display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;
+ padding:58px 44px;border:1px solid #ffffff18;border-radius:30px;
+ background:#ffffff08;backdrop-filter:blur(20px);box-shadow:0 25px 80px #00000066
+}
+.badge{
+ display:inline-block;padding:8px 13px;border-radius:30px;border:1px solid #ffffff18;
+ background:#ffffff08;color:#c9cad8;font-size:12px;margin-bottom:18px
+}
+h1{font-size:clamp(42px,6vw,70px);line-height:.98;letter-spacing:-3px}
+.gradient{
+ background:linear-gradient(90deg,#ff4ecd,#7c6cff,#00e5ff);
+ -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.username{margin-top:14px;color:#bdbde8;font-size:16px}
+.bio{margin-top:18px;max-width:590px;color:#cfd0dc;line-height:1.75}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.btn{
+ display:inline-block;text-decoration:none;color:#fff;padding:12px 17px;border-radius:12px;
+ border:1px solid #ffffff18;background:#ffffff09;font-size:14px;font-weight:bold;
+ transition:.25s;cursor:pointer
+}
+.btn:hover{transform:translateY(-3px);background:#ffffff14}
+.btn-main{background:#fff;color:#090910}
+.btn-main:hover{background:#fff}
+.photo-wrap{display:flex;justify-content:center}
+.photo{
+ width:min(330px,80vw);aspect-ratio:4/5;object-fit:cover;border-radius:28px;
+ border:1px solid #ffffff25;box-shadow:0 25px 70px #00000066;
+ animation:float 4s ease-in-out infinite
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-            background: linear-gradient(
-                135deg,
-                #ff4ecd,
-                #6c63ff,
-                #00d9ff
-            );
+/* LIVE STRIP */
+.live-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.live-item{
+ display:flex;align-items:center;gap:12px;padding:16px 18px;
+ border:1px solid #ffffff12;border-radius:18px;background:#ffffff06
+}
+.live-item span{font-size:21px}.live-item small{display:block;color:#777b8d;font-size:9px;letter-spacing:1.5px}
+.live-item strong{display:block;margin-top:3px;font-size:12px}
+.live-dot{
+ width:9px!important;height:9px;border-radius:50%;background:#42e58b;
+ box-shadow:0 0 14px #42e58b;animation:pulse 1.8s infinite
+}
+@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
 
-            font-size: 42px;
-            font-weight: bold;
+/* SECTIONS */
+section{margin-top:28px}
+.section{
+ padding:32px;border:1px solid #ffffff18;border-radius:25px;background:#ffffff06
+}
+.section-title{font-size:27px;margin-bottom:10px}
+.section-sub{color:#999bac;margin-bottom:22px;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{
+ padding:23px;border-radius:20px;border:1px solid #ffffff12;
+ background:#00000022;transition:.3s
+}
+.card:hover{transform:translateY(-5px);border-color:#ffffff2b}
+.card h3{font-size:19px;margin-bottom:9px}
+.card p{color:#bfc0cc;line-height:1.65;font-size:14px}
 
-            box-shadow:{
-                0 0 30px #ff4ecd66,
-                0 0 60px #6c63ff44;
+/* SERVICES */
+.service-cards{grid-template-columns:repeat(3,1fr)}
+.service{position:relative}
+.service-icon{
+ display:inline-grid;place-items:center;width:38px;height:38px;border-radius:11px;
+ background:linear-gradient(135deg,#ff4ecd44,#00e5ff33);
+ font-size:12px;font-weight:800;color:#dfe1ff;margin-bottom:18px
+}
+.price{font-size:23px;font-weight:900;margin-top:17px}
+.price small{font-size:11px;color:#777b8d;font-weight:normal}
+.service .btn{margin-top:16px;font-size:12px}
 
-            animation: float 3s ease-in-out infinite;
-        }
+/* PORTFOLIO */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.project{
+ position:relative;overflow:hidden;min-height:190px;padding:24px;border-radius:20px;
+ border:1px solid #ffffff12;background:linear-gradient(145deg,#ffffff0b,#00000022)
+}
+.project-number{font-size:11px;color:#777b8d;letter-spacing:2px}
+.project h3{margin-top:22px;font-size:21px}
+.project p{margin-top:8px;color:#bfc0cc;font-size:13px;line-height:1.6}
+.project-link{
+ display:inline-block;margin-top:17px;font-size:12px;text-decoration:none;
+ border-bottom:1px solid #ffffff55;padding-bottom:3px
+}
 
-        h1 {
-            margin-top: 25px;
-            font-size: 42px;
-        }
+/* SOCIALS */
+.socials{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.social{
+ text-decoration:none;color:#fff;padding:24px;border-radius:20px;border:1px solid #ffffff18;
+ transition:.3s;position:relative;overflow:hidden
+}
+.social:hover{transform:translateY(-6px) scale(1.01)}
+.tiktok{background:linear-gradient(135deg,#11131b,#ff005033)}
+.instagram{background:linear-gradient(135deg,#833ab455,#fd1d1d55,#fcb04555)}
+.icon{font-size:31px;margin-bottom:12px}.social h3{font-size:19px}
+.social p{color:#eee;margin-top:5px;font-size:14px}
+.arrow{position:absolute;right:20px;top:20px;font-size:20px;color:#ddd}
 
-        .username {
-            margin-top: 10px;
-            color: #bdbde8;
-            font-size: 17px;
-        }
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{text-align:center}.stat strong{display:block;font-size:25px}.stat span{color:#989aaa;font-size:12px}
 
-        .bio {
-            max-width: 550px;
-            margin: 20px auto 0;
-            line-height: 1.6;
-            color: #d0d0df;
-            font-size: 16px;
-        }
+/* CTA */
+.cta{
+ text-align:center;padding:40px 25px;border-radius:25px;
+ background:linear-gradient(135deg,#ff4ecd18,#7c6cff18,#00e5ff18);
+ border:1px solid #ffffff18
+}
+.cta h2{font-size:30px}.cta p{margin:10px auto 20px;max-width:600px;color:#bfc0cc;line-height:1.6}
 
-        .socials {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
+/* EXTRA CONTENT */
+.market-note{
+ margin-top:16px;padding:15px 17px;border-radius:16px;
+ border:1px solid #ffffff12;background:#ffffff05;color:#999bac;font-size:12px;line-height:1.6
+}
+.light .market-note{background:#00000003;border-color:#0000000d;color:#656978}
 
-        .card {
-            text-decoration: none;
-            color: white;
-            padding: 25px;
-            border-radius: 20px;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.12);
-        }
+/* FOOTER */
+footer{text-align:center;padding:30px 0;color:#77798b;font-size:12px}
 
-        .card:hover {
-            transform: translateY(-7px) scale(1.02);
-        }
+/* LIGHT */
+.light .navbar,.light .hero,.light .section{background:#ffffffcc;border-color:#00000012}
+.light .navlinks a,.light .badge,.light .username,.light .bio,
+.light .section-sub,.light .card p,.light .stat span{color:#656978}
+.light .card,.light .project{background:#00000004;border-color:#0000000d}
+.light .social{color:#111}.light .social p{color:#444}
+.light .theme{color:#111;background:#00000005}
+.light .btn{color:#111;border-color:#00000012;background:#00000005}
+.light .btn-main{background:#111;color:#fff}
+.light .project p,.light .cta p{color:#666}
 
-        .tiktok {
-            background: linear-gradient(135deg, #111, #ff005055);
-        }
-
-        .instagram {
-            background: linear-gradient(
-                135deg,
-                #833ab4,
-                #fd1d1d,
-                #fcb045
-            );
-        }
-
-        .icon {
-            font-size: 30px;
-            margin-bottom: 12px;
-        }
-
-        .card h2 {
-            font-size: 20px;
-            margin-bottom: 6px;
-        }
-
-        .card p {
-            color: #eeeeee;
-            font-size: 14px;
-        }
-
-        .about {
-            margin-top: 40px;
-            padding: 30px;
-            border-radius: 22px;
-            background: rgba(0,0,0,0.25);
-        }
-
-        .about h2 {
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-
-        .about p {
-            color: #c7c7d5;
-            line-height: 1.7;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #8888a0;
-            font-size: 13px;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 35px 20px;
-            }
-
-            h1 {
-                font-size: 30px;
-            }
-
-            .socials {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+/* MOBILE */
+@media(max-width:820px){
+ .navlinks{display:none}.hero{grid-template-columns:1fr;padding:38px 24px;text-align:center}
+ .bio{margin-left:auto;margin-right:auto}.buttons{justify-content:center}.photo-wrap{order:-1}
+ .photo{width:210px}.cards,.socials,.service-cards,.live-strip,.projects{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr 1fr}.section{padding:24px 18px}
+}
+</style>
 </head>
 
 <body>
+<div class="page">
 
-    <div class="container">
+<nav class="navbar">
+  <div class="logo">AM<span>.</span></div>
+  <div class="navlinks">
+    <a href="#about" id="navAbout">Haqqımda</a>
+    <a href="#services" id="navServices">Xidmətlər</a>
+    <a href="#process" id="navProcess">Proses</a>
+    <a href="#projects" id="navPortfolio">Portfolio</a>
+    <a href="#faq" id="navFaq">FAQ</a>
+  </div>
+  <div class="nav-actions">
+    <select id="language" class="language-select" aria-label="Dil seçimi">
+      <option value="az">🇦🇿 AZ</option>
+      <option value="tr">🇹🇷 TR</option>
+      <option value="en">🇬🇧 EN</option>
+    </select>
+    <a class="btn btn-main" id="navContact" href="#contact">Əlaqə</a>
+    <button class="theme" id="theme">☾</button>
+  </div>
+</nav>
 
-        <section class="profile">
+<main>
 
-            <div class="avatar">
-                <img src="logo.jpg.jpeg" alt="Amal Mammadaliyev" srcset="">
-            </div>
-
-            <h1>Amal Mammadaliyev</h1>
-
-            <p class="username">
-                Şəxsi Bloq &nbsp;•&nbsp; Kontent Yaradıcısı
-            </p>
-
-            <p class="bio">
-                İnternetdəki kiçik şəxsi səhifəmə xoş gəlmisən.
-                Burada fikirlərimi, maraqlarımı, həyatımı və
-                gündəlik yaşadığım anları paylaşıra.
-            </p>
-
-        </section>
-
-
-        <div class="socials">
-
-            <a
-                class="card tiktok"
-                href="https://www.tiktok.com/@the.mmdlyv"
-                target="_blank"
-            >
-                <div class="icon">♪</div>
-                <h2>TikTok</h2>
-                <p>@the.mmdlyv</p>
-            </a>
-
-
-            <a
-                class="card instagram"
-                href="https://www.instagram.com/im.mmdlyv"
-                target="_blank"
-            >
-                <div class="icon">◎</div>
-                <h2>Instagram</h2>
-                <p>@im.mmdlyv</p>
-            </a>
-
-        </div>
-
-
-        <section class="about">
-
-            <h2>Haqqımda</h2>
-
-            <p>
-                Salam, mən Amal. Bura fikirlərimi, maraqlarımı,
-                yaşadığım təcrübələri və gündəlik həyatımdan
-                maraqlı anları paylaşdığım şəxsi məkanımdır.
-            </p>
-
-        </section>
-
-
-        <footer>
-            © 2026 Amal Mammadaliyev
-        </footer>
-
+<section class="hero">
+  <div>
+    <div class="badge" id="badge">● Web Development & Personal Brand</div>
+    <h1>Amal <span class="gradient">Mammadaliyev</span></h1>
+    <p class="username" id="username">Web Developer • Content Creator • Student</p>
+    <p class="bio" id="heroBio">
+      Müasir, sürətli və mobil uyğun saytlar hazırlayıram.
+      Burada layihələrimi, öyrəndiklərimi və şəxsi kontentimi paylaşa bilərsən.
+    </p>
+    <div class="buttons">
+      <a class="btn btn-main" href="#services" id="heroServices">Xidmətlərə bax →</a>
+      <a class="btn" href="#projects" id="heroPortfolio">Portfolio</a>
     </div>
+  </div>
+
+  <div class="photo-wrap">
+    <img class="photo" src="logo.jpg.jpeg" alt="Amal Mammadaliyev">
+  </div>
+</section>
+
+<section class="live-strip">
+  <div class="live-item">
+    <span class="live-dot"></span>
+    <div><small id="statusLabel">STATUS</small><strong id="statusText">Online & creating</strong></div>
+  </div>
+  <div class="live-item">
+    <span>🕒</span>
+    <div><small id="timeLabel">LOCAL TIME</small><strong id="clock">--:--:--</strong></div>
+  </div>
+  <div class="live-item">
+    <span>📅</span>
+    <div><small id="dateLabel">DATE</small><strong id="date">--</strong></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2 class="section-title" id="aboutTitle">Haqqımda</h2>
+  <p class="section-sub" id="aboutSub">Qısa məlumat</p>
+  <div class="cards">
+    <div class="card">
+      <h3 id="aboutCard1Title">👋 Salam, mən Amal</h3>
+      <p id="aboutCard1Text">
+        Şəxsi brendimi və web development bacarıqlarımı inkişaf etdirirəm.
+        Bu sayt mənim özüm haqqında məlumat verdiyim və layihələrimi göstərdiyim şəxsi platformadır.
+      </p>
+    </div>
+    <div class="card">
+      <h3 id="aboutCard2Title">💻 Web Development</h3>
+      <p id="aboutCard2Text">
+        HTML, CSS və JavaScript öyrənir, real layihələr hazırlayıram.
+        Məqsədim sadə görünən, amma professional işləyən saytlar qurmaqdır.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <h2 class="section-title" id="servicesTitle">Xidmətlər & qiymətlər</h2>
+  <p class="section-sub" id="servicesSub">Başlanğıc səviyyəli freelancer üçün real və rəqabətli paketlər</p>
+
+  <div class="cards service-cards">
+    <div class="card service">
+      <div class="service-icon">01</div>
+      <h3 id="starterTitle">⚡ Starter</h3>
+      <p id="starterText">1 səhifəlik landing page, mobil uyğunluq, CTA düymələri və basic SEO.</p>
+      <div class="price">$10 <small id="starterFrom">-dan</small></div>
+      <a class="btn orderBtn" href="#contact">Sifariş et →</a>
+    </div>
+
+    <div class="card service">
+      <div class="service-icon">02</div>
+      <h3 id="professionalTitle">💼 Professional</h3>
+      <p id="professionalText">3–5 səhifəlik portfolio və ya şəxsi/business sayt, responsive dizayn və əlaqə bölməsi.</p>
+      <div class="price">$35 <small id="professionalFrom">-dən</small></div>
+      <a class="btn orderBtn" href="#contact">Sifariş et →</a>
+    </div>
+
+    <div class="card service">
+      <div class="service-icon">03</div>
+      <h3 id="businessTitle">🚀 Business</h3>
+      <p id="businessText">5–8 səhifə, custom dizayn, SEO başlanğıcı, formalar və əlavə funksiyalar.</p>
+      <div class="price">$70 <small id="businessFrom">-dən</small></div>
+      <a class="btn orderBtn" href="#contact">Sifariş et →</a>
+    </div>
+  </div>
+
+  <div class="cards" style="margin-top:16px">
+    <div class="card">
+      <h3 id="extraTitle">➕ Əlavə funksiyalar</h3>
+      <p id="extraText">Blog, əlavə səhifə, animasiya, rezervasiya, ödəniş və xüsusi inteqrasiyalar ayrıca qiymətləndirilir.</p>
+    </div>
+    <div class="card">
+      <h3 id="maintenanceTitle">🛠️ Baxım</h3>
+      <p id="maintenanceText">Sayt yeniləmələri, kiçik dəyişikliklər və texniki dəstək üçün aylıq paketlər mümkündür.</p>
+    </div>
+  </div>
+</section>
+
+<div class="market-note" id="marketNote">
+  Qiymətlər 2026-cı ilin freelancer bazarındakı geniş diapazonlar nəzərə alınaraq başlanğıc portfolio üçün
+  daha əlçatan səviyyədə seçilib. Müqayisə üçün, müxtəlif 2026 mənbələrində landing page freelancer qiymətləri
+  təxminən $300–$1,500, kiçik biznes saytları isə təxminən $1,000–$5,000+ aralığında göstərilir.
+</div>
+
+<section class="section" id="process">
+  <h2 class="section-title" id="processTitle">Necə işləyirəm?</h2>
+  <p class="section-sub" id="processSub">Sifarişdən canlı sayta qədər 4 sadə addım</p>
+  <div class="cards">
+    <div class="card"><h3>01 — Brief</h3><p>İstədiyin saytın məqsədini, bölmələrini və nümunələrini müəyyənləşdiririk.</p></div>
+    <div class="card"><h3>02 — Design</h3><p>Rəng, quruluş və mobil görünüş hazırlanır. Dizayn təsdiqləndikdən sonra kodlama başlayır.</p></div>
+    <div class="card"><h3>03 — Development</h3><p>HTML, CSS və JavaScript ilə sürətli və responsive sayt hazırlanır.</p></div>
+    <div class="card"><h3>04 — Launch</h3><p>Test edilir, domain/hostingə yerləşdirilir və son düzəlişlər edilir.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title" id="whyTitle">Niyə özəl sayt?</h2>
+  <p class="section-sub" id="whySub">Sosial media profilindən daha çox imkan</p>
+  <div class="cards service-cards">
+    <div class="card"><h3>🎯 Etibar</h3><p>Müştəri sənin haqqında məlumatı bir yerdə görür və səni daha professional qəbul edir.</p></div>
+    <div class="card"><h3>🔎 Google</h3><p>SEO ilə şəxsi adın və xidmətlərin axtarış nəticələrində görünməsi üçün baza yaradırsan.</p></div>
+    <div class="card"><h3>📈 Satış</h3><p>Xidmətlərini, qiymətlərini və əlaqə yollarını birbaşa təqdim edib müraciət toplaya bilərsən.</p></div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <h2 class="section-title" id="portfolioTitle">Portfolio</h2>
+  <p class="section-sub" id="portfolioSub">Hazırladığım və üzərində işlədiyim layihələr</p>
+
+  <div class="projects">
+    <div class="project">
+      <span class="project-number">PROJECT 01</span>
+      <h3>Personal Website</h3>
+      <p>Bu sayt — şəxsi brend, sosial media və portfolio üçün hazırlanıb.</p>
+      <a class="project-link" href="https://themmdlyv.xyz" target="_blank" rel="noopener">Canlı sayta bax ↗</a>
+    </div>
+
+    <div class="project">
+      <span class="project-number">PROJECT 02</span>
+      <h3>Future Project</h3>
+      <p>Yeni web layihələri hazır olduqca bu hissəyə əlavə ediləcək.</p>
+      <span class="project-link">Coming soon</span>
+    </div>
+
+    <div class="project">
+      <span class="project-number">PROJECT 03</span>
+      <h3>Client Projects</h3>
+      <p>Yeni web layihələri hazır olduqca bu hissəyə əlavə ediləcək.</p>
+      <span class="project-link">Coming soon</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title" id="interestsTitle">Maraqlarım</h2>
+  <p class="section-sub" id="interestsSub">Öyrəndiyim və inkişaf etdirdiyim sahələr</p>
+  <div class="stats">
+    <div class="card stat"><strong>💻</strong><span>Web Development</span></div>
+    <div class="card stat"><strong>📱</strong><span>Social Media</span></div>
+    <div class="card stat"><strong>🏋️</strong><span>Fitness</span></div>
+    <div class="card stat"><strong>🚀</strong><span>Projects</span></div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <h2 class="section-title" id="faqTitle">Tez-tez verilən suallar</h2>
+  <p class="section-sub" id="faqSub">Sifarişdən əvvəl ən vacib məlumatlar</p>
+  <div class="cards">
+    <div class="card"><h3>🌐 Domain və hosting daxildirmi?</h3><p>Starter qiymətinə daxil deyil. İstəsən domain və hosting seçimində kömək edirəm.</p></div>
+    <div class="card"><h3>📱 Telefon üçün uyğun olacaq?</h3><p>Bəli. Saytlar mobil, planşet və desktop ekranlarına uyğun hazırlanır.</p></div>
+    <div class="card"><h3>✏️ Dəyişiklik etmək olar?</h3><p>Bəli. Paketə uyğun düzəliş sayı əvvəlcədən razılaşdırılır; əlavə dəyişikliklər ayrıca hesablanır.</p></div>
+    <div class="card"><h3>💳 Ödəniş necə olur?</h3><p>Layihənin ölçüsündən asılı olaraq əvvəlcədən razılaşdırılmış mərhələli və ya tam ödəniş modeli istifadə edilə bilər.</p></div>
+  </div>
+</section>
+
+<section class="section" id="social">
+  <h2 class="section-title" id="socialTitle">Sosial media</h2>
+  <p class="section-sub" id="socialSub">Məni digər platformalarda da tapa bilərsən.</p>
+
+  <div class="socials">
+    <a class="social tiktok" href="https://www.tiktok.com/@the.mmdlyv" target="_blank" rel="noopener">
+      <span class="arrow">↗</span>
+      <div class="icon">♪</div><h3>TikTok</h3><p>@the.mmdlyv</p>
+    </a>
+
+    <a class="social instagram" href="https://www.instagram.com/im.mmdlyv" target="_blank" rel="noopener">
+      <span class="arrow">↗</span>
+      <div class="icon">◎</div><h3>Instagram</h3><p>@im.mmdlyv</p>
+    </a>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2 id="ctaTitle">Sayt istəyirsən? 🚀</h2>
+  <p id="ctaText">
+    Şəxsi portfolio, landing page və ya kiçik biznes saytı üçün mənimlə əlaqə saxlaya bilərsən.
+  </p>
+  <div class="buttons" style="justify-content:center">
+    <a class="btn btn-main" href="https://www.instagram.com/im.mmdlyv" target="_blank" rel="noopener">
+      Instagram-dan yaz →
+    </a>
+    <a class="btn" href="https://www.tiktok.com/@the.mmdlyv" target="_blank" rel="noopener">
+      TikTok
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Amal Mammadaliyev • themmdlyv.xyz • <span id="footerBuilt">Built with HTML, CSS & JavaScript</span>
+</footer>
+
+</div>
+
+<script>
+const themeButton=document.getElementById("theme");
+
+if(localStorage.getItem("theme")==="light"){
+  document.body.classList.add("light");
+  themeButton.textContent="☀";
+}
+
+themeButton.addEventListener("click",()=>{
+  document.body.classList.toggle("light");
+  const isLight=document.body.classList.contains("light");
+  themeButton.textContent=isLight?"☀":"☾";
+  localStorage.setItem("theme",isLight?"light":"dark");
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+function updateDateTime(){
+  const now=new Date();
+  document.getElementById("clock").textContent=
+    now.toLocaleTimeString("az-AZ",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+  document.getElementById("date").textContent=
+    now.toLocaleDateString("az-AZ",{day:"2-digit",month:"short",year:"numeric"});
+}
+updateDateTime();
+setInterval(updateDateTime,1000);
+</script>
+
+
+<script>
+const translations = {
+  az: {
+    navAbout:"Haqqımda", navServices:"Xidmətlər", navProcess:"Proses", navPortfolio:"Portfolio", navFaq:"FAQ", navContact:"Əlaqə",
+    badge:"● Web Development & Personal Brand", username:"Web Developer • Content Creator • Student",
+    heroBio:"Müasir, sürətli və mobil uyğun saytlar hazırlayıram. Burada layihələrimi, öyrəndiklərimi və şəxsi kontentimi paylaşa bilərsən.",
+    heroServices:"Xidmətlərə bax →", heroPortfolio:"Portfolio", statusLabel:"STATUS", statusText:"Online & creating", timeLabel:"LOCAL TIME", dateLabel:"DATE",
+    aboutTitle:"Haqqımda", aboutSub:"Qısa məlumat", aboutCard1Title:"👋 Salam, mən Amal",
+    aboutCard1Text:"Şəxsi brendimi və web development bacarıqlarımı inkişaf etdirirəm. Bu sayt mənim özüm haqqında məlumat verdiyim və layihələrimi göstərdiyim şəxsi platformadır.",
+    aboutCard2Title:"💻 Web Development", aboutCard2Text:"HTML, CSS və JavaScript öyrənir, real layihələr hazırlayıram. Məqsədim sadə görünən, amma professional işləyən saytlar qurmaqdır.",
+    servicesTitle:"Xidmətlər & qiymətlər", servicesSub:"Başlanğıc səviyyəli freelancer üçün real və rəqabətli paketlər",
+    starterTitle:"⚡ Starter", starterText:"1 səhifəlik landing page, mobil uyğunluq, CTA düymələri və basic SEO.", starterFrom:"-dan",
+    professionalTitle:"💼 Professional", professionalText:"3–5 səhifəlik portfolio və ya şəxsi/business sayt, responsive dizayn və əlaqə bölməsi.", professionalFrom:"-dən",
+    businessTitle:"🚀 Business", businessText:"5–8 səhifə, custom dizayn, SEO başlanğıcı, formalar və əlavə funksiyalar.", businessFrom:"-dən",
+    order:"Sifariş et →", extraTitle:"➕ Əlavə funksiyalar", extraText:"Blog, əlavə səhifə, animasiya, rezervasiya, ödəniş və xüsusi inteqrasiyalar ayrıca qiymətləndirilir.",
+    maintenanceTitle:"🛠️ Baxım", maintenanceText:"Sayt yeniləmələri, kiçik dəyişikliklər və texniki dəstək üçün aylıq paketlər mümkündür.",
+    processTitle:"Necə işləyirəm?", processSub:"Sifarişdən canlı sayta qədər 4 sadə addım",
+    whyTitle:"Niyə özəl sayt?", whySub:"Sosial media profilindən daha çox imkan",
+    portfolioTitle:"Portfolio", portfolioSub:"Hazırladığım və üzərində işlədiyim layihələr",
+    interestsTitle:"Maraqlarım", interestsSub:"Öyrəndiyim və inkişaf etdirdiyim sahələr",
+    faqTitle:"Tez-tez verilən suallar", faqSub:"Sifarişdən əvvəl ən vacib məlumatlar",
+    socialTitle:"Sosial media", socialSub:"Məni digər platformalarda da tapa bilərsən.",
+    ctaTitle:"Sayt istəyirsən? 🚀", ctaText:"Şəxsi portfolio, landing page və ya kiçik biznes saytı üçün mənimlə əlaqə saxlaya bilərsən.",
+    instagramBtn:"Instagram-dan yaz →"
+  },
+  tr: {
+    navAbout:"Hakkımda", navServices:"Hizmetler", navProcess:"Süreç", navPortfolio:"Portföy", navFaq:"SSS", navContact:"İletişim",
+    badge:"● Web Development & Personal Brand", username:"Web Developer • Content Creator • Student",
+    heroBio:"Modern, hızlı ve mobil uyumlu web siteleri hazırlıyorum. Projelerimi, öğrendiklerimi ve kişisel içeriklerimi burada paylaşabilirsin.",
+    heroServices:"Hizmetlere bak →", heroPortfolio:"Portföy", statusLabel:"DURUM", statusText:"Online & üretiyor", timeLabel:"YEREL SAAT", dateLabel:"TARİH",
+    aboutTitle:"Hakkımda", aboutSub:"Kısa bilgi", aboutCard1Title:"👋 Merhaba, ben Amal",
+    aboutCard1Text:"Kişisel markamı ve web development becerilerimi geliştiriyorum. Bu site kendim hakkında bilgi verdiğim ve projelerimi sergilediğim kişisel platformumdur.",
+    aboutCard2Title:"💻 Web Development", aboutCard2Text:"HTML, CSS ve JavaScript öğreniyor, gerçek projeler geliştiriyorum. Amacım sade görünen ama profesyonel çalışan web siteleri oluşturmak.",
+    servicesTitle:"Hizmetler & fiyatlar", servicesSub:"Başlangıç seviyesindeki freelancer için gerçekçi ve rekabetçi paketler",
+    starterTitle:"⚡ Starter", starterText:"1 sayfalık landing page, mobil uyumluluk, CTA butonları ve temel SEO.", starterFrom:"-dan",
+    professionalTitle:"💼 Professional", professionalText:"3–5 sayfalık portföy veya kişisel/işletme sitesi, responsive tasarım ve iletişim bölümü.", professionalFrom:"-dan",
+    businessTitle:"🚀 Business", businessText:"5–8 sayfa, özel tasarım, temel SEO, formlar ve ek özellikler.", businessFrom:"-dan",
+    order:"Sipariş ver →", extraTitle:"➕ Ek özellikler", extraText:"Blog, ek sayfa, animasyon, rezervasyon, ödeme ve özel entegrasyonlar ayrıca fiyatlandırılır.",
+    maintenanceTitle:"🛠️ Bakım", maintenanceText:"Site güncellemeleri, küçük değişiklikler ve teknik destek için aylık paketler mümkündür.",
+    processTitle:"Nasıl çalışıyorum?", processSub:"Siparişten canlı siteye kadar 4 basit adım",
+    whyTitle:"Neden özel bir web sitesi?", whySub:"Sosyal medya profilinden daha fazla imkan",
+    portfolioTitle:"Portföy", portfolioSub:"Hazırladığım ve üzerinde çalıştığım projeler",
+    interestsTitle:"İlgi alanlarım", interestsSub:"Öğrendiğim ve geliştirdiğim alanlar",
+    faqTitle:"Sık sorulan sorular", faqSub:"Siparişten önce en önemli bilgiler",
+    socialTitle:"Sosyal medya", socialSub:"Beni diğer platformlarda da bulabilirsin.",
+    ctaTitle:"Web sitesi mi istiyorsun? 🚀", ctaText:"Kişisel portföy, landing page veya küçük işletme sitesi için benimle iletişime geçebilirsin.",
+    instagramBtn:"Instagram'dan yaz →"
+  },
+  en: {
+    navAbout:"About", navServices:"Services", navProcess:"Process", navPortfolio:"Portfolio", navFaq:"FAQ", navContact:"Contact",
+    badge:"● Web Development & Personal Brand", username:"Web Developer • Content Creator • Student",
+    heroBio:"I create modern, fast and mobile-friendly websites. You can explore my projects, what I'm learning and my personal content here.",
+    heroServices:"View services →", heroPortfolio:"Portfolio", statusLabel:"STATUS", statusText:"Online & creating", timeLabel:"LOCAL TIME", dateLabel:"DATE",
+    aboutTitle:"About Me", aboutSub:"Quick information", aboutCard1Title:"👋 Hi, I'm Amal",
+    aboutCard1Text:"I'm developing my personal brand and web development skills. This site is my personal platform for sharing information about myself and showcasing my projects.",
+    aboutCard2Title:"💻 Web Development", aboutCard2Text:"I'm learning HTML, CSS and JavaScript and building real projects. My goal is to create websites that look simple but work professionally.",
+    servicesTitle:"Services & pricing", servicesSub:"Realistic and competitive packages for a beginner freelancer",
+    starterTitle:"⚡ Starter", starterText:"1-page landing page, mobile responsiveness, CTA buttons and basic SEO.", starterFrom:"from",
+    professionalTitle:"💼 Professional", professionalText:"3–5 page portfolio or personal/business website, responsive design and contact section.", professionalFrom:"from",
+    businessTitle:"🚀 Business", businessText:"5–8 pages, custom design, basic SEO, forms and additional features.", businessFrom:"from",
+    order:"Order now →", extraTitle:"➕ Extra features", extraText:"Blog, extra pages, animations, booking, payments and custom integrations are priced separately.",
+    maintenanceTitle:"🛠️ Maintenance", maintenanceText:"Monthly packages are available for site updates, small changes and technical support.",
+    processTitle:"How do I work?", processSub:"4 simple steps from order to live website",
+    whyTitle:"Why have your own website?", whySub:"More possibilities than a social media profile",
+    portfolioTitle:"Portfolio", portfolioSub:"Projects I've created and am working on",
+    interestsTitle:"My interests", interestsSub:"Areas I'm learning and developing",
+    faqTitle:"Frequently asked questions", faqSub:"The most important information before ordering",
+    socialTitle:"Social media", socialSub:"You can also find me on other platforms.",
+    ctaTitle:"Need a website? 🚀", ctaText:"You can contact me for a personal portfolio, landing page or small business website.",
+    instagramBtn:"Message me on Instagram →"
+  }
+};
+
+function setText(id, value){ const el=document.getElementById(id); if(el) el.textContent=value; }
+function setLanguage(lang){
+  const t=translations[lang] || translations.az;
+  Object.entries(t).forEach(([key,value])=>setText(key,value));
+  document.querySelectorAll(".orderBtn").forEach(b=>b.textContent=t.order);
+  document.documentElement.lang=lang;
+  localStorage.setItem("language",lang);
+}
+const languageSelect=document.getElementById("language");
+const savedLanguage=localStorage.getItem("language") || "az";
+languageSelect.value=savedLanguage;
+languageSelect.addEventListener("change",e=>setLanguage(e.target.value));
+setLanguage(savedLanguage);
+</script>
+
+
+<script>
+function translateRemaining(lang){
+ const t=translations[lang]||translations.az;
+ setText('footerBuilt', lang==='tr'?'HTML, CSS & JavaScript ile hazırlandı':lang==='en'?'Built with HTML, CSS & JavaScript':'HTML, CSS & JavaScript ilə hazırlanıb');
+ const mn=document.getElementById('marketNote');
+ if(mn) mn.textContent = lang==='tr'
+ ? 'Fiyatlar, 2026 freelancer piyasasındaki geniş aralıklar dikkate alınarak başlangıç portföyü için daha erişilebilir seviyede belirlendi. Karşılaştırma için çeşitli 2026 kaynaklarında landing page freelancer fiyatları yaklaşık $300–$1.500, küçük işletme siteleri ise yaklaşık $1.000–$5.000+ aralığında gösteriliyor.'
+ : lang==='en'
+ ? 'Prices were set at a more accessible level for a beginner portfolio, considering the wide ranges in the 2026 freelancer market. For comparison, various 2026 sources show landing page freelancer prices around $300–$1,500 and small business websites around $1,000–$5,000+.'
+ : 'Qiymətlər 2026-cı ilin freelancer bazarındakı geniş diapazonlar nəzərə alınaraq başlanğıc portfolio üçün daha əlçatan səviyyədə seçilib. Müqayisə üçün, müxtəlif 2026 mənbələrində landing page freelancer qiymətləri təxminən $300–$1,500, kiçik biznes saytları isə təxminən $1,000–$5,000+ aralığında göstərilir.';
+ const process=document.querySelector('#process .cards');
+ if(process){
+  const a=process.querySelectorAll('.card');
+  const data= lang==='tr'
+   ? [["01 — Brief","İstediğin sitenin amacını, bölümlerini ve örneklerini belirliyoruz."],["02 — Design","Renk, yapı ve mobil görünüm hazırlanır. Tasarım onaylandıktan sonra kodlama başlar."],["03 — Development","HTML, CSS ve JavaScript ile hızlı ve responsive bir site hazırlanır."],["04 — Launch","Test edilir, domain/hosting'e yerleştirilir ve son düzenlemeler yapılır."]]
+   : lang==='en'
+   ? [["01 — Brief","We define the purpose, sections and examples for the website you want."],["02 — Design","Colors, layout and mobile view are prepared. Coding starts after design approval."],["03 — Development","A fast and responsive website is built with HTML, CSS and JavaScript."],["04 — Launch","It is tested, deployed to the domain/hosting and final adjustments are made."]]
+   : [["01 — Brief","İstədiyin saytın məqsədini, bölmələrini və nümunələrini müəyyənləşdiririk."],["02 — Design","Rəng, quruluş və mobil görünüş hazırlanır. Dizayn təsdiqləndikdən sonra kodlama başlayır."],["03 — Development","HTML, CSS və JavaScript ilə sürətli və responsive sayt hazırlanır."],["04 — Launch","Test edilir, domain/hostingə yerləşdirilir və son düzəlişlər edilir."]];
+  a.forEach((c,i)=>{if(data[i]){c.querySelector('h3').textContent=data[i][0];c.querySelector('p').textContent=data[i][1];}});
+ }
+ const why=document.querySelectorAll('section.section');
+ // Why section is the one whose title is now "whyTitle"; use its cards
+ const wt=document.getElementById('whyTitle');
+ if(wt){
+  const cards=wt.parentElement.querySelectorAll('.card');
+  const data= lang==='tr'
+   ? [["🎯 Güven","Müşteri hakkındaki bilgileri tek yerde görür ve seni daha profesyonel algılar."],["🔎 Google","SEO ile adının ve hizmetlerinin arama sonuçlarında görünmesi için temel oluşturursun."],["📈 Satış","Hizmetlerini, fiyatlarını ve iletişim yollarını doğrudan sunarak başvuru toplayabilirsin."]]
+   : lang==='en'
+   ? [["🎯 Trust","Clients see your information in one place and perceive you as more professional."],["🔎 Google","SEO gives you a foundation for your name and services to appear in search results."],["📈 Sales","Present your services, prices and contact methods directly and collect inquiries."]]
+   : [["🎯 Etibar","Müştəri sənin haqqında məlumatı bir yerdə görür və səni daha professional qəbul edir."],["🔎 Google","SEO ilə şəxsi adın və xidmətlərin axtarış nəticələrində görünməsi üçün baza yaradırsan."],["📈 Satış","Xidmətlərini, qiymətlərini və əlaqə yollarını birbaşa təqdim edib müraciət toplaya bilərsən."]];
+  cards.forEach((c,i)=>{if(data[i]){c.querySelector('h3').textContent=data[i][0];c.querySelector('p').textContent=data[i][1];}});
+ }
+ // portfolio
+ const pt=document.getElementById('portfolioTitle');
+ if(pt){
+  const cards=pt.parentElement.querySelectorAll('.project');
+  const data=lang==='tr'
+   ? [["PROJECT 01","Personal Website","Bu site — kişisel marka, sosyal medya ve portföy için hazırlandı.","Canlı siteye bak ↗"],["PROJECT 02","Future Project","Yeni web projeleri hazır oldukça bu bölüme eklenecek.","Çok yakında"],["PROJECT 03","Client Projects","Yeni web projeleri hazır oldukça bu bölüme eklenecek.","Çok yakında"]]
+   : lang==='en'
+   ? [["PROJECT 01","Personal Website","This site is built for personal branding, social media and portfolio.","View live site ↗"],["PROJECT 02","Future Project","New web projects will be added here as they are completed.","Coming soon"],["PROJECT 03","Client Projects","New web projects will be added here as they are completed.","Coming soon"]]
+   : [["PROJECT 01","Personal Website","Bu sayt — şəxsi brend, sosial media və portfolio üçün hazırlanıb.","Canlı sayta bax ↗"],["PROJECT 02","Future Project","Yeni web layihələri hazır olduqca bu hissəyə əlavə ediləcək.","Coming soon"],["PROJECT 03","Client Projects","Yeni web layihələri hazır olduqca bu hissəyə əlavə ediləcək.","Coming soon"]];
+  cards.forEach((c,i)=>{const d=data[i]; if(d){c.querySelector('.project-number').textContent=d[0];c.querySelector('h3').textContent=d[1];c.querySelector('p').textContent=d[2];c.querySelector('.project-link').textContent=d[3];}});
+ }
+ // interests
+ const it=document.getElementById('interestsTitle');
+ if(it){const spans=it.parentElement.querySelectorAll('.stat span'); const arr=lang==='tr'?["Web Geliştirme","Sosyal Medya","Fitness","Projeler"]:lang==='en'?["Web Development","Social Media","Fitness","Projects"]:["Web Development","Social Media","Fitness","Projects"];spans.forEach((e,i)=>e.textContent=arr[i]);}
+ // FAQ
+ const ft=document.getElementById('faqTitle');
+ if(ft){
+  const cards=ft.parentElement.querySelectorAll('.card');
+  const data=lang==='tr'
+   ? [["🌐 Domain ve hosting dahil mi?","Starter fiyatına dahil değildir. İstersen domain ve hosting seçiminde yardımcı olabilirim."],["📱 Telefon için uygun olacak mı?","Evet. Siteler mobil, tablet ve masaüstü ekranlarına uygun hazırlanır."],["✏️ Değişiklik yapılabilir mi?","Evet. Pakete göre revizyon sayısı önceden belirlenir; ek değişiklikler ayrıca ücretlendirilir."],["💳 Ödeme nasıl yapılır?","Projenin boyutuna göre önceden kararlaştırılmış aşamalı veya tam ödeme modeli kullanılabilir."]]
+   : lang==='en'
+   ? [["🌐 Are domain and hosting included?","They are not included in the Starter price. I can help you choose a domain and hosting if needed."],["📱 Will it work on phones?","Yes. Websites are built to work on mobile, tablet and desktop screens."],["✏️ Can changes be made?","Yes. The number of revisions is agreed in advance according to the package; extra changes are charged separately."],["💳 How does payment work?","Depending on the project size, a pre-agreed milestone or full-payment model can be used."]]
+   : [["🌐 Domain və hosting daxildirmi?","Starter qiymətinə daxil deyil. İstəsən domain və hosting seçimində kömək edirəm."],["📱 Telefon üçün uyğun olacaq?","Bəli. Saytlar mobil, planşet və desktop ekranlarına uyğun hazırlanır."],["✏️ Dəyişiklik etmək olar?","Bəli. Paketə uyğun düzəliş sayı əvvəlcədən razılaşdırılır; əlavə dəyişikliklər ayrıca hesablanır."],["💳 Ödəniş necə olur?","Layihənin ölçüsündən asılı olaraq əvvəlcədən razılaşdırılmış mərhələli və ya tam ödəniş modeli istifadə edilə bilər."]];
+  cards.forEach((c,i)=>{const d=data[i]; if(d){c.querySelector('h3').textContent=d[0];c.querySelector('p').textContent=d[1];}});
+ }
+}
+const oldSetLanguage=setLanguage;
+setLanguage=function(lang){oldSetLanguage(lang);translateRemaining(lang);}
+setLanguage(savedLanguage);
+</script>
 
 </body>
 </html>
